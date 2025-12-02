@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lab number 3</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            position: relative;
+            background-color: rgba(222, 250, 175, 0.5); 
+        }
+        
+        h1 {
+            text-align: center;
+            padding-top: 20px;
+            cursor: pointer;
+        }
+        
+        #hello_image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-filter: drop-shadow(5px 5px 5px #4682B4);
+            filter: drop-shadow(5px 5px 5px #4682B4);
+            width: 30%;
+            height: auto;
+            animation: example-animation 1s linear infinite;
+        }
+        
+        /* Анимация для вращения картинки */
+        @keyframes example-animation {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <img id="hello_image" src="photo1.jpg" alt="Картинка с эффектом тени">
+    <h1 onclick="playAudio('song.mp3')">Hello, World !</h1> 
+    <p id="demo"></p>
+    
+    <script> 
+        var flag = false; 
+        
+        function playAudio(url) {   
+            if (!flag) {   
+                var audio = new Audio(url);   
+                audio.loop = true;   
+                audio.play();   
+                flag = true;
+            }
+        } 
+    </script> 
+</body>
+</html>
